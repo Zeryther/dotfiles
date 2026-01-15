@@ -1,18 +1,18 @@
 [user]
 	name = "Mehdi Baaboura"
 	email = "mehdi.baaboura@gigadrive.de"
-        signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCkY6/h8de0tkRe5Y9+Ew/r4oG2IIfny8snzNo00b8C5sSBf4uVjAoUOuCs3cikcpFdhkYHEQzSQbGBjN7gUXX7KvGyTvzes2SCKpWDFsEBY/obfhFcCr5DAE4mH/fcUtlFNJAU+AYn/FUpMgwRwsVcW+zDXwac7xBazMhhDApp0sFWesQL7opEihhBRqi6AFePZVIyH8uxxaXFomtUUd5dm6X+cAhLl7GOwQeNtOOHJ6IOpoi2cDPsr08XH6TL3t7QV/g50bVIORHei48lyXBjwHakF/vNpaYTHB4lLso2SO/RUC1z+k3Gq205kyBhQWRdQv5C2deaawhGbFoSg57ZXX6qYCyE3mlszxghUz5YNfpP0zbjSKobvaQGir4OmUWr2cDmD/d6QKFETcn0avuVKlEjlNuNZqzoURPROnd9wt45d4W0atWRPBKGBHpDVJJKNyqNeXU0eliLhgElzoPYF3+n75tfY0uFDHR8dh3bX0njX4BBTQLOYyGk5K89bM=
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDCkY6/h8de0tkRe5Y9+Ew/r4oG2IIfny8snzNo00b8C5sSBf4uVjAoUOuCs3cikcpFdhkYHEQzSQbGBjN7gUXX7KvGyTvzes2SCKpWDFsEBY/obfhFcCr5DAE4mH/fcUtlFNJAU+AYn/FUpMgwRwsVcW+zDXwac7xBazMhhDApp0sFWesQL7opEihhBRqi6AFePZVIyH8uxxaXFomtUUd5dm6X+cAhLl7GOwQeNtOOHJ6IOpoi2cDPsr08XH6TL3t7QV/g50bVIORHei48lyXBjwHakF/vNpaYTHB4lLso2SO/RUC1z+k3Gq205kyBhQWRdQv5C2deaawhGbFoSg57ZXX6qYCyE3mlszxghUz5YNfpP0zbjSKobvaQGir4OmUWr2cDmD/d6QKFETcn0avuVKlEjlNuNZqzoURPROnd9wt45d4W0atWRPBKGBHpDVJJKNyqNeXU0eliLhgElzoPYF3+n75tfY0uFDHR8dh3bX0njX4BBTQLOYyGk5K89bM=
 [gpg]
-        format = ssh
+	format = ssh
 [gpg "ssh"]
-        #program = "/mnt/c/Users/zeryt/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
-        program = /mnt/c/Users/zeryt/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe
+	#program = "/mnt/c/Users/zeryt/AppData/Local/1Password/app/8/op-ssh-sign-wsl"
+	program = /mnt/c/Users/zeryt/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe
 [commit]
-        gpgsign = true
+	gpgsign = true
 [credential]
-        helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe
+	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe
 [core]
-        autocrlf = input
-        eol = lf
+	autocrlf = input
+	eol = lf
 [init]
-        defaultBranch = main
+	defaultBranch = main
