@@ -173,3 +173,7 @@ export ADB_SERVER_SOCKET=tcp:localhost:5037
 export ANDROID_HOME=$HOME/android_sdk
 export PATH=$PATH:$HOME/android_sdk/cmdline-tools/latest/bin
 export PATH=$PATH:/mnt/c/Users/zeryt/AppData/Local/Android/Sdk/platform-tools
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
