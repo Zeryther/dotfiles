@@ -2,10 +2,11 @@ set -e
 
 # setup files on WSL (Ubuntu)
 
-# install stow
-echo ">> Installing stow..."
-sudo apt-get install -y stow
-echo ">> Done installing stow."
+# install dependencies
+echo ">> Installing dependencies..."
+sudo apt-get install -y stow zsh
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+echo ">> Done installing dependencies."
 
 # setup links
 echo ">> Linking zsh config..."
