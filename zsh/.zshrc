@@ -70,7 +70,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose zsh-nvm ssh-agent zsh-auto-nvm-use)
+plugins=(git docker docker-compose ssh-agent nvm 1password)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/.agent-bridge.sh
+#source $HOME/.agent-bridge.sh
 
 # bun completions
 [ -s "/home/zeryther/.bun/_bun" ] && source "/home/zeryther/.bun/_bun"
@@ -146,7 +146,7 @@ fi
 
 export FLYCTL_INSTALL="/home/zeryther/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
-. "/home/zeryther/.deno/env"
+#. "/home/zeryther/.deno/env"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -168,7 +168,7 @@ export ANDROID_HOME=$HOME/Android/sdk
 
 # 3. Keep this line to forward ADB commands from WSL to Windows
 export ADB_SERVER_SOCKET=tcp:localhost:5037
-. "/home/zeryther/.acme.sh/acme.sh.env"
+#. "/home/zeryther/.acme.sh/acme.sh.env"
 
 export ANDROID_HOME=$HOME/android_sdk
 export PATH=$PATH:$HOME/android_sdk/cmdline-tools/latest/bin
@@ -177,3 +177,7 @@ export PATH=$PATH:/mnt/c/Users/zeryt/AppData/Local/Android/Sdk/platform-tools
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias ssh='ssh.exe'
+alias ssh-add='ssh-add.exe'
+

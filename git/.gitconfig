@@ -14,5 +14,6 @@
 [core]
 	autocrlf = input
 	eol = lf
+	sshCommand = ssh.exe
 [init]
 	defaultBranch = main
