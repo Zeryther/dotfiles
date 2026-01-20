@@ -35,10 +35,20 @@ export FLYCTL_INSTALL="$HOME/.fly"
 export ANDROID_HOME="$HOME/android_sdk"
 export ADB_SERVER_SOCKET="tcp:localhost:5037"
 
-# === Lazy-load NVM (huge startup time saver) ===
+# === Lazy-load NVM (with immediate access to default node) ===
 export NVM_DIR="$HOME/.nvm"
+
+# Add default node to PATH immediately (fast, no nvm overhead)
+if [[ -d "$NVM_DIR/versions/node" ]]; then
+    DEFAULT_NODE=$(ls -v "$NVM_DIR/versions/node" | tail -1)
+    if [[ -n "$DEFAULT_NODE" ]]; then
+        path=("$NVM_DIR/versions/node/$DEFAULT_NODE/bin" $path)
+    fi
+fi
+
+# Lazy-load nvm command itself (only needed for switching versions)
 nvm() {
-    unfunction nvm node npm npx
+    unfunction nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     nvm "$@"
 }
