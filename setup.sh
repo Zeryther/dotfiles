@@ -4,7 +4,7 @@ set -e
 
 # install dependencies
 echo ">> Installing dependencies..."
-sudo apt-get install -y stow zsh build-essential procps curl file git # stow for linking, zsh for shell
+sudo apt-get install -y stow zsh build-essential procps curl file git zip # stow for linking, zsh for shell
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh # zoxide for better cd
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash # nvm for node development
 
