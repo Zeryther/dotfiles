@@ -32,8 +32,16 @@ path=(
 export BUN_INSTALL="$HOME/.bun"
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export FLYCTL_INSTALL="$HOME/.fly"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
 export ANDROID_HOME="$HOME/android_sdk"
 export ADB_SERVER_SOCKET="tcp:localhost:5037"
+# The Android emulator runs on the Windows host behind NAT (10.0.2.x), so it
+# can't reach WSL's LAN IP directly. Expo auto-detects the LAN IP and advertises
+# it as the dev server address, which the emulator can't connect to. Setting this
+# to "localhost" makes Expo advertise localhost instead. The emulator maps 10.0.2.2
+# to the host's localhost, and with networkingMode=mirrored in .wslconfig, the
+# host's localhost is also WSL's localhost — so the connection goes through.
+export REACT_NATIVE_PACKAGER_HOSTNAME="localhost"
 
 # === Lazy-load NVM (with immediate access to default node) ===
 export NVM_DIR="$HOME/.nvm"
