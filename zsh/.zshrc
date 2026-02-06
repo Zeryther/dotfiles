@@ -79,6 +79,26 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #    source ~/.agent-bridge.sh
 #fi
 
+# === Android Emulator Port Forwarding ===
+# adb reverse doesn't support forwarding all ports, so we forward common dev
+# ports whenever a device is connected. Run `adb-fwd` to set up, or
+# `adb-fwd 4000 9090` to add custom ports. This makes localhost:<port> inside
+# the emulator reach WSL's localhost:<port>.
+adb-fwd() {
+    local ports=(8081 8082 3000 3001 5173 4173 19000 19001 19006 "$@")
+    local adb="$ANDROID_HOME/platform-tools/adb"
+
+    if ! "$adb" devices 2>/dev/null | grep -q 'device$'; then
+        echo "No emulator/device connected."
+        return 1
+    fi
+
+    for port in "${ports[@]}"; do
+        "$adb" reverse tcp:$port tcp:$port 2>/dev/null
+    done
+    echo "Forwarded ${#ports[@]} ports: ${ports[*]}"
+}
+
 # === Aliases ===
 alias ssh='ssh.exe'
 alias ssh-add='ssh-add.exe'
