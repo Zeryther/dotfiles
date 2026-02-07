@@ -88,7 +88,7 @@ adb-fwd() {
     local ports=(8081 8082 3000 3001 5173 4173 19000 19001 19006 "$@")
     local adb="$ANDROID_HOME/platform-tools/adb"
 
-    if ! "$adb" devices 2>/dev/null | grep -q 'device$'; then
+    if ! "$adb" devices 2>/dev/null | tr -d '\r' | grep -q 'device$'; then
         echo "No emulator/device connected."
         return 1
     fi
