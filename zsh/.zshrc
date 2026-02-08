@@ -35,6 +35,7 @@ export FLYCTL_INSTALL="$HOME/.fly"
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
 export ANDROID_HOME="$HOME/android_sdk"
 export ADB_SERVER_SOCKET="tcp:localhost:5037"
+export OPENCODE_ENABLE_EXA=1
 # The Android emulator runs on the Windows host behind NAT (10.0.2.x), so it
 # can't reach WSL's LAN IP directly. Expo auto-detects the LAN IP and advertises
 # it as the dev server address, which the emulator can't connect to. Setting this
@@ -103,3 +104,6 @@ adb-fwd() {
 alias ssh='ssh.exe'
 alias ssh-add='ssh-add.exe'
 
+
+# Scaleway CLI autocomplete initialization.
+eval "$(scw autocomplete script shell=zsh)"
